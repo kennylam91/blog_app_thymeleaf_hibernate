@@ -20,11 +20,13 @@
             <td width="200px">Title</td>
             <td width="400px">Content</td>
             <td width="200px">Writer</td>
+            <td width="200px">View</td>
         </tr>
         <tr class="row" th:each="blog:${blogs}">
             <td th:text="${blog.title}"></td>
             <td th:text="${blog.content}"></td>
             <td th:text="${blog.writer}"></td>
+            <td><a th:href="@{/blog/view(id=${blog.getId()})}">View</a></td>
         </tr>
     </table>
 </form>
