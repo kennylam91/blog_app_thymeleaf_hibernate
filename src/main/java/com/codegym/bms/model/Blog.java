@@ -9,15 +9,15 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     private Long id;
-    private String name;
+    private String title;
     private String content;
     private String category;
 
     public Blog() {
     }
 
-    public Blog(String name, String content, String category) {
-        this.name = name;
+    public Blog(String title, String content, String category) {
+        this.title = title;
         this.content = content;
         this.category = category;
     }
@@ -30,12 +30,12 @@ public class Blog {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getContent() {
