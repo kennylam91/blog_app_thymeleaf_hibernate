@@ -7,11 +7,14 @@ import javax.persistence.*;
 public class Blog {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long id;
     private String title;
+
+    @Column(columnDefinition = "long")
     private String content;
-    private String category;
+
+
+    private String writer;
 
     public Blog() {
     }
@@ -19,7 +22,7 @@ public class Blog {
     public Blog(String title, String content, String category) {
         this.title = title;
         this.content = content;
-        this.category = category;
+        this.writer = category;
     }
 
     public Long getId() {
@@ -46,11 +49,11 @@ public class Blog {
         this.content = content;
     }
 
-    public String getCategory() {
-        return category;
+    public String getWriter() {
+        return writer;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setWriter(String writer) {
+        this.writer = writer;
     }
 }

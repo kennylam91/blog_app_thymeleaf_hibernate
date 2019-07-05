@@ -5,11 +5,19 @@ import com.codegym.bms.repository.BlogRepository;
 import com.codegym.bms.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BlogServiceImpl implements BlogService {
     @Autowired
     private BlogRepository blogRepository;
     @Override
     public void save(Blog blog) {
         blogRepository.save(blog);
+    }
+
+    @Override
+    public List<Blog> findAll() {
+        return blogRepository.findAll();
     }
 }

@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
     <title>Blog</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
 
@@ -18,8 +20,8 @@
             <td><textarea th:field="*{content}" cols="70" rows="15"></textarea></td>
         </tr>
         <tr>
-            <td>Category</td>
-            <td><input type="text" th:field="*{category}"></td>
+            <td>Write</td>
+            <td><input type="text" th:field="*{writer}"></td>
         </tr>
     </table>
     <br/>

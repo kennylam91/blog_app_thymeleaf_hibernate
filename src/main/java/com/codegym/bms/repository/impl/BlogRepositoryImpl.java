@@ -23,13 +23,13 @@ public class BlogRepositoryImpl implements BlogRepository {
 
     @Override
     public List<Blog> findAll() {
-        TypedQuery<Blog> query = em.createQuery("select b from Blogs b", Blog.class);
+        TypedQuery<Blog> query = em.createQuery("select b from Blog b", Blog.class);
         return query.getResultList();
     }
 
     @Override
     public Blog findById(Long id) {
-        TypedQuery<Blog> query = em.createQuery("select b from Blogs b where b.id=:id", Blog.class);
+        TypedQuery<Blog> query = em.createQuery("select b from Blog b where b.id=:id", Blog.class);
         query.setParameter("id", id);
         return query.getSingleResult();
     }
