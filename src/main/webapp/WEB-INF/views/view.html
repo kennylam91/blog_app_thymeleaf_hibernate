@@ -13,15 +13,15 @@
     <table>
         <tr>
             <td>Title</td>
-            <td><textarea th:text="${blog.title}" cols="70" rows="3"></textarea></td>
+            <td><textarea readonly th:text="${blog.title}" cols="70" rows="3"></textarea></td>
         </tr>
         <tr>
             <td>Content</td>
-            <td><textarea th:text="${blog.content}" cols="70" rows="15"></textarea></td>
+            <td><textarea readonly th:text="${blog.content}" cols="70" rows="15"></textarea></td>
         </tr>
         <tr>
             <td>Writer</td>
-            <td><input type="text" th:text="${blog.writer}"></td>
+            <td><input readonly type="text" th:text="${blog.writer}"></td>
         </tr>
     </table>
     </form>

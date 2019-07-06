@@ -47,4 +47,17 @@ public class BlogController {
 
         return modelAndView;
     }
+
+    @GetMapping("/delete")
+    public ModelAndView showDeleteForm(@RequestParam Long id){
+        ModelAndView modelAndView = new ModelAndView("delete");
+        modelAndView.addObject("blog",blogService.findById(id));
+        return modelAndView;
+    }
+
+    @PostMapping("/delete")
+    public String deleteBlog(@ModelAttribute Blog blog, RedirectAttributes redirectAttributes){
+        blogService.remove(blog.getId());
+        return "redirect:/blog/list";
+    }
 }

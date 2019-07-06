@@ -12,4 +12,6 @@ public interface BlogService {
     List<Blog> findAll();
 
     Blog findById(Long id);
+
+    void remove(Long id);
 }
