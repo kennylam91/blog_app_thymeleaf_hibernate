@@ -1,36 +1,35 @@
 <!doctype html>
 <html lang="vi" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Document</title>
-    <style type="text/css">
-        .row {
-            overflow: hidden;
-        }
-    </style>
+<head th:replace="layout::header">
 </head>
 <body>
-<h3><a th:href="@{/blog/create}">Create Blog</a></h3>
+<h4><a th:href="@{/blog/create}">Create New Blog</a></h4>
 <h3>Blog List</h3>
 <form th:object="${blogs}">
     <table border="1">
         <tr>
-            <td>No.</td>
+            <td>No</td>
             <td>Title</td>
             <td>Content</td>
             <td>Writer</td>
             <td>Delete</td>
+            <td>Edit</td>
             <td>View</td>
         </tr>
         <tr class="row" th:each="blog:${blogs}">
-            <td th:text="${blogStat.count}"></td>
-            <td th:text="${blog.title}"></td>
-            <td th:text="${blog.content}"></td>
-            <td th:text="${blog.writer}"></td>
-            <td><a th:href="@{/blog/delete(id=${blog.getId()})}">Delete</a></td>
-            <td><a th:href="@{/blog/view(id=${blog.getId()})}">View</a></td>
+            <td><div class="number" th:text="${blogStat.count}"></div></td>
+            <td>
+                <div class="title" th:text="${blog.title}"></div>
+            </td>
+            <td>
+                <div class="content" th:text="${blog.content}"></div>
+            </td>
+            <td >
+                <div class="writer" th:text="${blog.writer}"></div>
+            </td>
+            <td><div class="action"><a th:href="@{/blog/delete(id=${blog.getId()})}">Delete</a></div></td>
+            <td><div class="action"><a th:href="@{/blog/edit(id=${blog.getId()})}">Edit</a></div></td>
+            <td><div class="action"><a th:href="@{/blog/view(id=${blog.getId()})}">View</a></div></td>
         </tr>
     </table>
 </form>

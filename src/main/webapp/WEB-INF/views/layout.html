@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head th:fragment="header">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>Blog</title>
+
+    <style type="text/css">
+        h3 {
+            background-color: blue;
+            color: white;
+            padding: 10px 0 10px 20px;
+        }
+
+        h4 {
+            background-color: #dee8df;
+            color: #ff0000c9;
+            padding: 5px;
+        }
+        td
+        {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        footer {
+            margin: 10px 0;
+        }
+        .number{
+            width: 30px;
+
+        }
+        .title {
+            width: 220px;
+        }
+
+        .content {
+            width: 550px;
+            height: 70px;
+            overflow: hidden;
+            padding: 5px;
+        }
+
+        .writer {
+            width: 150px;
+
+        }
+
+        .action {
+            width: 60px;
+
+
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+<footer th:fragment="footer">
+    &copy; 2019 Lampv
+</footer>
+</body>
+</html>

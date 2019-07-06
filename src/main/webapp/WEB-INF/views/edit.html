@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout::header">
+</head>
+<body>
+<h4><a th:href="@{/blog/list}">Back to Blog List</a></h4>
+<h3>Edit Blog</h3>
+<form th:object="${blog}" th:action="@{/blog/save}" method="post">
+    <table>
+        <tr>
+            <td>Title</td>
+            <td><textarea th:text="${blog.title}" th:field="*{title}" cols="70" rows="3"></textarea></td>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <td><textarea th:text="${blog.content}" th:field="*{content}" cols="70" rows="15"></textarea></td>
+        </tr>
+        <tr>
+            <td>Writer</td>
+            <td><textarea th:text="${blog.writer}" th:field="*{writer}" cols="70" rows="1"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Save"></td>
+        </tr>
+        <input type="hidden" th:field="*{id}" th:value="blog.id">
+    </table>
+</form>
+</body>
+</html>

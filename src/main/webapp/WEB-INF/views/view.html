@@ -1,29 +1,17 @@
 <!DOCTYPE html>
 <html lang="vi" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Blog</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head th:replace="layout::header">
 </head>
 <body>
-
-<h2>View Blog Detail</h2>
+<h4><a th:href="@{/blog/list}">Back to Blog List</a></h4>
+<h3>View Blog Detail</h3>
 <form th:object="${blog}">
-    <table>
-        <tr>
-            <td>Title</td>
-            <td><textarea readonly th:text="${blog.title}" cols="70" rows="3"></textarea></td>
-        </tr>
-        <tr>
-            <td>Content</td>
-            <td><textarea readonly th:text="${blog.content}" cols="70" rows="15"></textarea></td>
-        </tr>
-        <tr>
-            <td>Writer</td>
-            <td><input readonly type="text" th:text="${blog.writer}"></td>
-        </tr>
-    </table>
+
+
+    <h4 th:text="${blog.title}"></h4>
+    <p th:text="${blog.content}"></p>
+    <h5 th:text="${blog.writer}"></h5>
+
     </form>
 </body>
 </html>

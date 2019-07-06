@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="vi" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Blog</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head th:replace="layout::header">
 </head>
 <body>
-
-<h2>Create new Blog</h2>
+<h4><a th:href="@{/blog/list}">Back to Blog List</a></h4>
+<h3>Create new Blog</h3>
 <form th:object="${blog}" method="post" th:action="@{/blog/save}">
     <table>
         <tr>
@@ -21,7 +17,7 @@
         </tr>
         <tr>
             <td>Writer</td>
-            <td><input type="text" th:field="*{writer}"></td>
+            <td><textarea th:field="*{writer}" cols="70" rows="1"></textarea></td>
         </tr>
     </table>
     <br/>

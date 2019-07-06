@@ -60,4 +60,11 @@ public class BlogController {
         blogService.remove(blog.getId());
         return "redirect:/blog/list";
     }
+
+    @GetMapping("/edit")
+    public ModelAndView showEditForm(@RequestParam Long id){
+        ModelAndView modelAndView = new ModelAndView("edit");
+        modelAndView.addObject("blog", blogService.findById(id));
+        return modelAndView;
+    }
 }
