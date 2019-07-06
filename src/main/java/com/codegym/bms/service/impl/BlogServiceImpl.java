@@ -20,4 +20,9 @@ public class BlogServiceImpl implements BlogService {
     public List<Blog> findAll() {
         return blogRepository.findAll();
     }
+
+    @Override
+    public Blog findById(Long id) {
+       return blogRepository.findById(id);
+    }
 }

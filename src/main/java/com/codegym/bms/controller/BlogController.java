@@ -38,4 +38,13 @@ public class BlogController {
         modelAndView.addObject("blogs",blogs);
         return modelAndView;
     }
+
+    @GetMapping("/view")
+    public ModelAndView showViewForm(@RequestParam Long id){
+        ModelAndView modelAndView = new ModelAndView("view");
+        Blog blog = blogService.findById(id);
+        modelAndView.addObject("blog",blog);
+
+        return modelAndView;
+    }
 }
